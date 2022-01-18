@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+
+{% for i in users %}
+    <div class="card" style="width: 18rem;border: 3px solid black;">
+        <div class="card-body">
+        <h5 class="card-title">{{i.username}}</h5>
+        {% if i.paid == True %}
+            <p class="card-text">{{i.price}}</p>
+        {%else%}
+            <p class="card-link">Free</p>
+        {% endif %}
+        </div>
+        <span><a class="navbar-brand" href="{{ url_for('users.subprocess',Type='Follow',id=i.id) }}"><button type="button" class="btn btn-success">Subscribe</button></a></span><span><a class="navbar-brand" href="{{ url_for('users.subprocess',Type='Unfollow',id=i.id) }}"><button type="button" class="btn btn-danger">Unsubscribe</button></a></span>
+        <span><a class="navbar-brand" href="{{ url_for('users.all_posts',id=i.id) }}"><button type="button" class="btn btn-success">Posts</button></a></span>
+    </div>
+{% endfor %}
+
+
+{% endblock content %}

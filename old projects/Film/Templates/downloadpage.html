@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% include "nav.html"%}
+{% block content %}
+
+   {% if legend == "cartoon_select" %} 
+    <div class="container" >
+        <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                <form method="POST" class="form-inline">
+                        <h>{{cartoon.Cartoon_name}}</h>
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <a href="{{cartoon.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                        </button>
+                </form>      
+                
+        </div>
+    </div>
+    {% elif legend == "cartoon" %} 
+    {%for cartoon in cartoon %}
+    <div class="container" >
+                <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                        <form method="POST" class="form-inline">
+                                        <h>{{cartoon.Cartoon_name}}</h>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                        <a href="{{cartoon.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                                </button>
+                        </form>      
+                        
+                </div>
+    </div>
+    {%endfor%}
+    {% elif legend == "film_select" %}
+    <div class="container" >
+                <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                        <form method="POST" class="form-inline">
+                                <h>{{film.Cartoon_name}}</h>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                        <a href="{{film.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                                </button>
+                        </form>      
+                        
+                </div>
+    </div>
+    {% elif legend == "film"%}
+    {%for film in film %}
+    <div class="container" >
+                <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                        <form method="POST" class="form-inline">
+                                        <h>{{film.Cartoon_name}}</h>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                        <a href="{{film.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                                </button>
+                        </form>      
+                        
+                </div>
+    </div>
+    {%endfor%}
+    {% elif legend == "series_select" %}
+    <div class="container" >
+                <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                        <form method="POST" class="form-inline">
+                                <h>{{film.Cartoon_name}}</h>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                        <a href="{{film.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                                </button>
+                        </form>      
+                        
+                </div>
+    </div>
+    {%elif legend == "series"%}
+    {%for serie in series %}
+    <div class="container" >
+                <div class="jumbotron jumbotron-fluid" style="text-align:center;">
+                        <form method="POST" class="form-inline">
+                                        <h>{{film.Cartoon_name}}</h>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                        <a href="{{serie.Cartoon_link}}"><span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
+                                </button>
+                        </form>      
+                        
+                </div>
+    </div>
+    {%endfor%}
+    {% endif  %}
+    
+{% endblock  content %}

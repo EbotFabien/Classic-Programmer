@@ -1,0 +1,4 @@
+4cfd2c040b7b45eb82dbef82fe3b67a7
+https://newsapi.org/sources,blob
+Flask moment js
+Alexa smart Mirror

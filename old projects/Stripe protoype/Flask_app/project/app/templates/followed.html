@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+
+<a href="{{link}}">Client Dashboard</a>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User_name</th>
+        <th scope="col">price</th>
+        <th scope="col">paid</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in  users%}
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <th scope="col">{{i.username}}</th>
+            <td>{{i.price}}</td>
+            <td>{{i.paid}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock content %} 

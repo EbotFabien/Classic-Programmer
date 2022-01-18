@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+
+{% for i in bot %}
+    <div class="card" style="width: 18rem;border: 3px solid black;">
+        <div class="card-body">
+        <h5 class="card-title">{{i.Name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><a href="{{ url_for('viewresponse',id=i.id) }}" class="card-link">View Responses</a></h6>
+        <p class="card-text"><a href="{{ url_for('customize',id=i.id) }}" class="card-link">Add Responses</a></p>
+        <a href="{{ url_for('viewconvo',id=i.id) }}" class="card-link">Conversations</a>
+        </div>
+        <span><a class="navbar-brand" href="{{ url_for('botprocess',token=i.token,id=1) }}"><button type="button" class="btn btn-success">Start</button></a></span><span><a class="navbar-brand" href="{{ url_for('botprocess',token=i.token,id=0) }}"><button type="button" class="btn btn-danger">Stop</button></a></span>
+    </div>
+{% endfor %}
+
+{% endblock content %} 

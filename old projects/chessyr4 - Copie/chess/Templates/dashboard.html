@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+
+To Create
+
+
+
+<a class="navbar-brand" href="{{ url_for('createBot',id=current_user.id) }}"><button type="button" class="btn btn-primary btn-lg">Insert Token</button></a>
+
+
+
+
+{% endblock content %} 

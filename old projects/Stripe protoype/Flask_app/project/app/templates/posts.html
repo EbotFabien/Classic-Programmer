@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Posts</th>
+        <th scope="col">Payment</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in  posts%}
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <th scope="col">{{i.content}}</th>
+            <th scope="col"><a href="{{ url_for('pay.chargep',id=i.user) }}">Pay</a></th><!--if statement for access-->
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Posts</th>
+        <th scope="col">Already payed</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in  payer%}
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <th scope="col">{{i.content}}</th>
+            <th scope="col">Already payed</th><!--if statement for access-->
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+{% endblock content %}

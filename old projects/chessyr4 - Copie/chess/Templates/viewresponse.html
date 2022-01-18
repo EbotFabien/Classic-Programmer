@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Responses</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in  bot%}
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <td>{{i.question}}</td>
+            <td>{{i.response}}</td>
+            <td><a href="{{ url_for('customize',id=i.bot) }}" class="card-link">add</a></td>
+            <th scope="col"><a href="{{ url_for('deletecustom',id=i.bot) }}" class="card-link">delete</a></th>
+            
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+
+{% endblock content %} 

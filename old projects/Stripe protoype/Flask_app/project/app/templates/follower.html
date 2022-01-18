@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% include "nav.html" %}
+{% block content%}
+{% if acc != None %}
+ 
+{% if acc.valid == True %}
+  <a href="{{link}}">Dashboard</a>
+{% else %}
+  <a href="{{ url_for('pay.refresh',id=current_user.id) }}">Dashboard</a>
+{% endif %}
+{% endif %}
+<a href="{{ url_for('users.posted') }}">Create payed Posts</a>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User_name</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in  users%}
+        <tr>
+            <th scope="row">{{i.id}}</th>
+            <th scope="col">{{i.username}}</th>
+        </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock content %} 
